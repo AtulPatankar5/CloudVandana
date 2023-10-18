@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #fefefe; /* Set the background to black */
+    color: #ddd; /* Set text color to white */
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #4f5050; /* Dark gray background */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #fff; /* White text color */
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.button {
+    flex: 1;
+    padding: 15px;
+    margin: 0 5px;
+    border: 2px solid #333;
+    border-radius: 9px;
+    background-color: #070606; /* Dark button background */
+    cursor: pointer;
+    text-align: center;
+    font-size: 18px;
+    color: #fff; /* White button text color */
+}
+
+.button:hover {
+    background-color: #e0e0e0;
+    color: #333; /* Button text color on hover */
+}
+
+.row input {
+    flex: 3;
+    padding: 15px;
+    border: 2px solid #333;
+    border-radius: 9px;
+    font-size: 18px;
+    color: #333; /* Input text color */
+}
+
+input[type="text"] {
+    width: 100%;
+}
+
+/* Add more CSS rules for styling and colors as needed */

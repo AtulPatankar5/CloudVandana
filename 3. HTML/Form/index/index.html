@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Survey Form</title>
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(4, 201, 250);
+        }
+
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 25px;
+        }
+
+        .field {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Customer Survey Form</h1>
+    <form id="surveyForm" action="#" onsubmit="return false;">
+        <div class="field">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" required>
+        </div>
+        <div class="field">
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" required>
+        </div>
+        <div class="field">
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" required>
+        </div>
+        <div class="field">
+            <label for="country">Country:</label>
+            <select id="country" required>
+                <option value="INDIA">India</option>
+                <option value="Canada">Zumbabwe</option>
+                <option value="Canada">Russia</option>
+            </select>
+        </div>
+        <div class="field">
+            <label>Gender:</label>
+            <input type="radio" id="male" name="gender"> <label for="male">Male</label>
+            <input type="radio" id="female" name="gender"> <label for="female">Female</label>
+            <input type="radio" id="other" name="gender"> <label for="other">Other</label>
+        </div>
+        <div class="field">
+            <label for="profession">Profession:</label>
+            <input type="text" id="profession" required>
+        </div>
+        <div class="field">
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+        </div>
+        <div class="field">
+            <label for="mobile">Mobile Number:</label>
+            <input type="tel" id="mobile" required>
+        </div>
+        <div class="field">
+            <button type="submit" onclick="submitForm()">Submit</button>
+            <button type="reset" onclick="resetForm()">Reset</button>
+        </div>
+    </form>
+
+    <script>
+        function submitForm() {
+            const form = document.getElementById('surveyForm');
+            if (form.checkValidity()) {
+                const firstName = document.getElementById('firstName').value;
+                const lastName = document.getElementById('lastName').value;
+                const dob = document.getElementById('dob').value;
+                const country = document.getElementById('country').value;
+                const gender = Array.from(document.querySelectorAll('input[name="gender"]:checked')).map(e => e.nextElementSibling.textContent).join(', ');
+                const profession = document.getElementById('profession').value;
+                const email = document.getElementById('email').value;
+                const mobile = document.getElementById('mobile').value;
+
+                const message = `
+                    First Name: ${firstName}
+                    Last Name: ${lastName}
+                    Date of Birth: ${dob}
+                    Country: ${country}
+                    Gender: ${gender}
+                    Profession: ${profession}
+                    Email: ${email}
+                    Mobile Number: ${mobile}
+                `;
+                alert(message);
+
+                form.reset();
+            } else {
+                alert('Please fill out all required fields.');
+            }
+        }
+
+        function resetForm() {
+            document.getElementById('surveyForm').reset();
+        }
+    </script>
+</body>
+</html>

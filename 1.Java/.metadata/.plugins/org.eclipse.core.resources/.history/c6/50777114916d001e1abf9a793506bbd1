@@ -1,0 +1,29 @@
+package Java_Questions;
+
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+
+public class Pangram {
+
+	public static void main(String[] args) {
+		String str = "The quick brown fox jumps over the lazy dog.";
+
+		boolean result = pangramCheck(str.toLowerCase());
+		System.out.println("String is Panagram=" + result);
+	}
+
+	private static boolean pangramCheck(String str) {
+		Map<Character, Integer> map = new HashMap<>();
+		for (int i = 0; i < 26; i++) {
+			map.put((char) (97 + i), 1);
+		}
+		for (Entry<Character, Integer> i : map.entrySet()) {
+			System.out.println(i);
+		}
+
+		return false;
+	}
+
+}

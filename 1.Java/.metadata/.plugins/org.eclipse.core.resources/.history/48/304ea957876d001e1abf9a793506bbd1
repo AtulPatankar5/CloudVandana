@@ -1,0 +1,10 @@
+package Java_Questions;
+
+public class a_ShuffleArray {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
